@@ -1,0 +1,159 @@
+// 
+// Copyright (c) 2019 Yuta Tokusashi
+// All rights reserved.
+//
+// This software was developed by
+// Stanford University and the University of Cambridge Computer Laboratory
+// under National Science Foundation under Grant No. CNS-0855268,
+// the University of Cambridge Computer Laboratory under EPSRC INTERNET Project EP/H040536/1 and
+// by the University of Cambridge Computer Laboratory under DARPA/AFRL contract FA8750-11-C-0249 ("MRC2"), 
+// as part of the DARPA MRC research programme.
+//
+// @NETFPGA_LICENSE_HEADER_START@
+//
+// Licensed to NetFPGA C.I.C. (NetFPGA) under one or more contributor
+// license agreements.  See the NOTICE file distributed with this work for
+// additional information regarding copyright ownership.  NetFPGA licenses this
+// file to you under the NetFPGA Hardware-Software License, Version 1.0 (the
+// "License"); you may not use this file except in compliance with the
+// License.  You may obtain a copy of the License at:
+//
+//   http://www.netfpga-cic.org
+//
+// Unless required by applicable law or agreed to in writing, Work distributed
+// under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+// CONDITIONS OF ANY KIND, either express or implied.  See the License for the
+// specific language governing permissions and limitations under the License.
+//
+// @NETFPGA_LICENSE_HEADER_END@
+// 
+
+#define SUME DB ID OFFSET 0x0
+#define SUME DB ID DEFAULT 0x0000DB00
+#define SUME DB ID WIDTH 32
+#define SUME DB VERSION OFFSET 0x4
+#define SUME DB VERSION DEFAULT 0x1
+#define SUME DB VERSION WIDTH 32
+#define SUME DB RESET OFFSET 0x8
+#define SUME DB RESET DEFAULT 0x0
+#define SUME DB RESET WIDTH 16
+#define SUME DB FLIP OFFSET 0xC
+#define SUME DB FLIP DEFAULT 0x0
+#define SUME DB FLIP WIDTH 32
+#define SUME DB DEBUG OFFSET 0x10
+#define SUME DB DEBUG DEFAULT 0x0
+#define SUME DB DEBUG WIDTH 32
+#define SUME DB PKTIN OFFSET 0x14
+#define SUME DB PKTIN DEFAULT 0x0
+#define SUME DB PKTIN WIDTH 32
+#define SUME DB PKTOUT OFFSET 0x18
+#define SUME DB PKTOUT DEFAULT 0x0
+#define SUME DB PKTOUT WIDTH 32
+#define SUME DB P0PKTIN OFFSET 0x1C
+#define SUME DB P0PKTIN DEFAULT 0x0
+#define SUME DB P0PKTIN WIDTH 32
+#define SUME DB P0PKTOUT OFFSET 0x20
+#define SUME DB P0PKTOUT DEFAULT 0x0
+#define SUME DB P0PKTOUT WIDTH 32
+#define SUME DB P1PKTIN OFFSET 0x24
+#define SUME DB P1PKTIN DEFAULT 0x0
+#define SUME DB P1PKTIN WIDTH 32
+#define SUME DB P1PKTOUT OFFSET 0x28
+#define SUME DB P1PKTOUT DEFAULT 0x0
+#define SUME DB P1PKTOUT WIDTH 32
+#define SUME DB P2PKTIN OFFSET 0x2C
+#define SUME DB P2PKTIN DEFAULT 0x0
+#define SUME DB P2PKTIN WIDTH 32
+#define SUME DB P2PKTOUT OFFSET 0x30
+#define SUME DB P2PKTOUT DEFAULT 0x0
+#define SUME DB P2PKTOUT WIDTH 32
+#define SUME DB P0DEBUG OFFSET 0x34
+#define SUME DB P0DEBUG DEFAULT 0x0
+#define SUME DB P0DEBUG WIDTH 8
+#define SUME DB P1DEBUG OFFSET 0x38
+#define SUME DB P1DEBUG DEFAULT 0x0
+#define SUME DB P1DEBUG WIDTH 8
+#define SUME DB P2DEBUG OFFSET 0x3C
+#define SUME DB P2DEBUG DEFAULT 0x0
+#define SUME DB P2DEBUG WIDTH 8
+#define SUME DB IPADDR OFFSET 0x40
+#define SUME DB IPADDR DEFAULT 0x0
+#define SUME DB IPADDR WIDTH 32
+#define SUME DB KVSPORT OFFSET 0x44
+#define SUME DB KVSPORT DEFAULT 0x2BCB
+#define SUME DB KVSPORT WIDTH 16
+#define SUME DB MODE OFFSET 0x48
+#define SUME DB MODE DEFAULT 0x1
+#define SUME DB MODE WIDTH 8
+#define SUME DB DEBUG0 OFFSET 0x4C
+#define SUME DB DEBUG0 DEFAULT 0x0
+#define SUME DB DEBUG0 WIDTH 32
+#define SUME DB DEBUG1 OFFSET 0x50
+#define SUME DB DEBUG1 DEFAULT 0x0
+#define SUME DB DEBUG1 WIDTH 32
+#define SUME DB L1HIT OFFSET 0x54
+#define SUME DB L1HIT DEFAULT 0x0
+#define SUME DB L1HIT WIDTH 32
+#define SUME DB L1MISS OFFSET 0x58
+#define SUME DB L1MISS DEFAULT 0x0
+#define SUME DB L1MISS WIDTH 32
+#define SUME DB DRAM OFFSET 0x5C
+#define SUME DB DRAM DEFAULT 0x0
+#define SUME DB DRAM WIDTH 32
+#define SUME DB DRAMIN OFFSET 0x60
+#define SUME DB DRAMIN DEFAULT 0x0
+#define SUME DB DRAMIN WIDTH 32
+#define SUME DB DRAMOUT OFFSET 0x64
+#define SUME DB DRAMOUT DEFAULT 0x0
+#define SUME DB DRAMOUT WIDTH 32
+#define SUME DB SRAM0WR OFFSET 0x68
+#define SUME DB SRAM0WR DEFAULT 0x0
+#define SUME DB SRAM0WR WIDTH 32
+#define SUME DB SRAM0RD OFFSET 0x6C
+#define SUME DB SRAM0RD DEFAULT 0x0
+#define SUME DB SRAM0RD WIDTH 32
+#define SUME DB SRAM1WR OFFSET 0x70
+#define SUME DB SRAM1WR DEFAULT 0x0
+#define SUME DB SRAM1WR WIDTH 32
+#define SUME DB SRAM1RD OFFSET 0x74
+#define SUME DB SRAM1RD DEFAULT 0x0
+#define SUME DB SRAM1RD WIDTH 32
+#define SUME DB P0CHUNK OFFSET 0x78
+#define SUME DB P0CHUNK DEFAULT 0x0
+#define SUME DB P0CHUNK WIDTH 32
+#define SUME DB P1CHUNK OFFSET 0x7C
+#define SUME DB P1CHUNK DEFAULT 0x0
+#define SUME DB P1CHUNK WIDTH 32
+#define SUME DB P2CHUNK OFFSET 0x80
+#define SUME DB P2CHUNK DEFAULT 0x0
+#define SUME DB P2CHUNK WIDTH 32
+#define SUME DB P2CHUNK OFFSET 0x80
+#define SUME DB P2CHUNK DEFAULT 0x0
+#define SUME DB P2CHUNK WIDTH 32
+#define SUME DB P0ERR OFFSET 0x84
+#define SUME DB P0ERR DEFAULT 0x0
+#define SUME DB P0ERR WIDTH 32
+#define SUME DB P1ERR OFFSET 0x88
+#define SUME DB P1ERR DEFAULT 0x0
+#define SUME DB P1ERR WIDTH 32
+#define SUME DB P2ERR OFFSET 0x8C
+#define SUME DB P2ERR DEFAULT 0x0
+#define SUME DB P2ERR WIDTH 32
+#define SUME DB DRAMRD OFFSET 0x90
+#define SUME DB DRAMRD DEFAULT 0x0
+#define SUME DB DRAMRD WIDTH 32
+#define SUME DB SRAMIN OFFSET 0x94
+#define SUME DB SRAMIN DEFAULT 0x0
+#define SUME DB SRAMIN WIDTH 32
+#define SUME DB SRAMOUT OFFSET 0x98
+#define SUME DB SRAMOUT DEFAULT 0x0
+#define SUME DB SRAMOUT WIDTH 32
+#define SUME DB LUTIN OFFSET 0x9C
+#define SUME DB LUTIN DEFAULT 0x0
+#define SUME DB LUTIN WIDTH 32
+#define SUME DB LUTOUT OFFSET 0x100
+#define SUME DB LUTOUT DEFAULT 0x0
+#define SUME DB LUTOUT WIDTH 32
+#define SUME DB PEEN OFFSET 0x104
+#define SUME DB PEEN DEFAULT 0x1
+#define SUME DB PEEN WIDTH 16
